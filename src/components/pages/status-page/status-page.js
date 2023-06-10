@@ -143,6 +143,7 @@ export default function StatusPage() {
               src="/videos/video-1.mp4"
               autoPlay={true}
               controls={true}
+              loop={true}
             />
           </div>
         </section>
