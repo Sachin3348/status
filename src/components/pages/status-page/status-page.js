@@ -142,8 +142,11 @@ export default function StatusPage() {
               className="video"
               src="/videos/video-1.mp4"
               autoPlay={true}
-              controls={true}
+              controls={false}
               loop={true}
+              allowFullScreen={false}
+              playsInline
+
             />
           </div>
         </section>
