@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 16px;
 }
 
 .App-logo {
@@ -34,5 +37,19 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+
+  .section {
+    flex-direction: row;
+  }
+
+  .sectionPadding {
+    padding: 0 calc(210vw / var(--global-scale-factor-desktop));
   }
 }
