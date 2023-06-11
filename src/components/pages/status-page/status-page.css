@@ -61,14 +61,16 @@ overflow: hidden;
 }
 
 .messagesection{
-    font-size: 1.5rem;
     font-weight: 700;
     background-color: transparent;
 }
 .message{
     background: linear-gradient(-45deg, pink, rgba(0, 0, 255, 0)); 
+    font-size: 1.2rem;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-align: center;
+    background-color: red;
 }
 
 .heart{

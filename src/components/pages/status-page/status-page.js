@@ -2,8 +2,11 @@ import "./status-page.css";
 import React, { useState, useEffect } from "react";
 import anime from "animejs";
 import Topiary from "../../molecules/tree-component/tree-component";
+import Heart from "../../atoms/heart-button/heart-button";
+import { message } from "../../../utils/constant";
+// import HeartButton from "../../atoms/heart-button/heart-button";
 export default function StatusPage() {
-  const [num, setNum] = useState(60);
+  const [num, setNum] = useState(100);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
   const [vw, setVw] = useState(
     Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
@@ -84,10 +87,13 @@ export default function StatusPage() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
+  const [heartClickCount, setHeartClickCount] = useState(0)
   function handleSwitch() {
-    console.log(isVideoVisible);
-    setIsVideoVisible(!isVideoVisible);
+    setHeartClickCount(heartClickCount+1)
+    if(heartClickCount === 4){
+      setIsVideoVisible(!isVideoVisible);
+      setHeartClickCount(0)
+    }
   }
   return (
     <div id="App">
@@ -120,10 +126,11 @@ export default function StatusPage() {
 
       <section className="messagesection">
         <p className="message">
-          A Video Just for You <span className="heart">❤️</span>
+         {message} 
+         {/* <span className="heart">❤️</span> */}
         </p>
       </section>
-
+{/* 
       <label className="switch">
         <div className="round">
           <input name="onoff" id="onoff" type="checkbox" />
@@ -134,13 +141,15 @@ export default function StatusPage() {
             </label>
           </div>
         </div>
-      </label>
+      </label> */}
+
+      <Heart handleClick={handleSwitch}/>
       {isVideoVisible && (
         <section className="videoSection">
           <div className="card">
             <video
               className="video"
-              src="/videos/video-1.mp4"
+              src="/videos/video-2.mp4"
               autoPlay={true}
               controls={false}
               loop={true}
