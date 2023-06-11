@@ -88,14 +88,21 @@ export default function StatusPage() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   const [heartClickCount, setHeartClickCount] = useState(0)
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false)
   const audioRef = useRef(null)
   function handleSwitch() {
     setHeartClickCount(heartClickCount+1)
     if(heartClickCount === 4){
       setIsVideoVisible(!isVideoVisible);
       setHeartClickCount(0)
-      audioRef.current.play()
-      audioRef.current.currentTime= 187
+      if(!isAudioPlaying){
+        audioRef.current.play()
+        audioRef.current.currentTime= 187
+        setIsAudioPlaying(!isAudioPlaying)
+      }else{
+        setIsAudioPlaying(!isAudioPlaying)
+        audioRef.current.pause()
+      }
     }
   }
   return (
@@ -164,7 +171,7 @@ export default function StatusPage() {
         </section>
       )}
       <p className="regards">With Love : <br/> Sachin ❤️</p>
-      <audio ref={audioRef} src="/music/Main Agar Kahoon.mp3"  >
+      <audio ref={audioRef} src="/music/Main Agar Kahoon.mp3">
       <progress max={100} value={40}  />
       </audio>
       {/* <p className="regards">Sachin ❤️</p> */}
