@@ -1,7 +1,7 @@
 import "./status-page.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import anime from "animejs";
-import Topiary from "../../molecules/tree-component/tree-component";
+// import Topiary from "../../molecules/tree-component/tree-component";
 import Heart from "../../atoms/heart-button/heart-button";
 import { message } from "../../../utils/constant";
 // import HeartButton from "../../atoms/heart-button/heart-button";
@@ -88,11 +88,14 @@ export default function StatusPage() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   const [heartClickCount, setHeartClickCount] = useState(0)
+  const audioRef = useRef(null)
   function handleSwitch() {
     setHeartClickCount(heartClickCount+1)
     if(heartClickCount === 4){
       setIsVideoVisible(!isVideoVisible);
       setHeartClickCount(0)
+      audioRef.current.play()
+      audioRef.current.currentTime= 187
     }
   }
   return (
@@ -123,12 +126,12 @@ export default function StatusPage() {
           />
         ))}
       </div>
-
+      
       <section className="messagesection">
         <p className="message">
          {message} 
-         {/* <span className="heart">❤️</span> */}
         </p>
+         <p className="caption">Me too 🥰 ❤️</p>
       </section>
 {/* 
       <label className="switch">
@@ -161,6 +164,9 @@ export default function StatusPage() {
         </section>
       )}
       <p className="regards">With Love : <br/> Sachin ❤️</p>
+      <audio ref={audioRef} src="/music/Main Agar Kahoon.mp3"  >
+      <progress max={100} value={40}  />
+      </audio>
       {/* <p className="regards">Sachin ❤️</p> */}
     </div>
   );
