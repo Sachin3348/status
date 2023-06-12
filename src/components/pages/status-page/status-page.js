@@ -92,12 +92,12 @@ export default function StatusPage() {
   const audioRef = useRef(null)
   function handleSwitch() {
     setHeartClickCount(heartClickCount+1)
-    if(heartClickCount === 4){
+    if(heartClickCount === 1){
       setIsVideoVisible(!isVideoVisible);
       setHeartClickCount(0)
       if(!isAudioPlaying){
         audioRef.current.play()
-        audioRef.current.currentTime= 187
+        audioRef.current.currentTime= 20
         setIsAudioPlaying(!isAudioPlaying)
       }else{
         setIsAudioPlaying(!isAudioPlaying)
@@ -138,7 +138,7 @@ export default function StatusPage() {
         <p className="message">
          {message} 
         </p>
-         <p className="caption">Me too 🥰 ❤️</p>
+         <p className="caption">Love you Yaar 🥰 ❤️</p>
       </section>
 {/* 
       <label className="switch">
@@ -171,7 +171,7 @@ export default function StatusPage() {
         </section>
       )}
       <p className="regards">With Love : <br/> Sachin ❤️</p>
-      <audio ref={audioRef} autoPlay={true} src="/song-2.mp3">
+      <audio ref={audioRef} src="/videos/song.mp3">
       <progress max={100} value={40}  />
       </audio>
       {/* <p className="regards">Sachin ❤️</p> */}
