@@ -171,7 +171,7 @@ export default function StatusPage() {
         </section>
       )}
       <p className="regards">With Love : <br/> Sachin ❤️</p>
-      <audio ref={audioRef} src="/music/song-2.mp3">
+      <audio ref={audioRef} autoPlay={true} src="/song-2.mp3">
       <progress max={100} value={40}  />
       </audio>
       {/* <p className="regards">Sachin ❤️</p> */}

@@ -121,7 +121,7 @@ const Heart = ({handleClick}) => {
       <div className='inner-wrapper'>
         <Splash circles={items}/>
         {[... new Array(LAYERS)].map((_, i) => (
-          <HeartSVG className='heart-layer' rotate={{x, y}} translateZ={i * LAYER_GAP} scale={Math.sin((i / LAYERS)*Math.PI)/10 + 1}/>
+          <HeartSVG className='heart-layer' rotate={{x, y}} translateZ={i * LAYER_GAP} scale={Math.sin((i / LAYERS)*Math.PI)/10 + 1} key={i}/>
         ))}
         <HeartSVG className='heart-stroke' rotate={{x, y}} translateZ={(LAYERS + 1) * LAYER_GAP} strokeDashoffset={offset} scale={0.9}/>
         <ShineSVG x={y / 50 + 0.5} opacity={x / 200 + 0.5} rotate={{x, y}} translateZ={(LAYERS + 1) * LAYER_GAP}/>
