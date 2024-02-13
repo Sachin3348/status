@@ -109,20 +109,20 @@ export default function StatusPage() {
   }, []);
   const [heartClickCount, setHeartClickCount] = useState(0)
   const [isAudioPlaying, setIsAudioPlaying] = useState(false)
-  const audioRef = useRef(null)
+  // const audioRef = useRef(null)
   function handleSwitch() {
+    setIsVideoVisible(!isVideoVisible);
     setHeartClickCount(heartClickCount+1)
     if(heartClickCount === 1){
-      setIsVideoVisible(!isVideoVisible);
       setHeartClickCount(0)
-      if(!isAudioPlaying){
-        audioRef.current.play()
-        audioRef.current.currentTime= 20
-        setIsAudioPlaying(!isAudioPlaying)
-      }else{
-        setIsAudioPlaying(!isAudioPlaying)
-        audioRef.current.pause()
-      }
+      // if(!isAudioPlaying){
+      //   audioRef.current.play()
+      //   audioRef.current.currentTime= 20
+      //   setIsAudioPlaying(!isAudioPlaying)
+      // }else{
+      //   setIsAudioPlaying(!isAudioPlaying)
+      //   audioRef.current.pause()
+      // }
     }
   }
   return (
@@ -191,9 +191,9 @@ export default function StatusPage() {
         </section>
       )}
       <p className="regards">With Love : <br/> Sachin ❤️</p>
-      <audio ref={audioRef} src="/videos/song.mp3">
+      {/* <audio ref={audioRef} src="/videos/song.mp3">
       <progress max={100} value={40}  />
-      </audio>
+      </audio> */}
       {/* <p className="regards">Sachin ❤️</p> */}
     </div>
   );

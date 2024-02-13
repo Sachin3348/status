@@ -1,2 +1,1 @@
-export const message = `You look cute too when you are sad but.. 
-You look fabulous when you smile❤️`
+export const message = `Sending you heartfelt wishes on this day of love. Happy Valentine’s Day❤️`
