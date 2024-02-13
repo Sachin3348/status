@@ -158,7 +158,7 @@ export default function StatusPage() {
         <p className="message">
          {message} 
         </p>
-         <p className="caption">Love you Yaar 🥰 ❤️</p>
+         {/* <p className="caption">Love you Yaar 🥰 ❤️</p> */}
       </section>
 {/* 
       <label className="switch">
@@ -190,7 +190,7 @@ export default function StatusPage() {
           </div>
         </section>
       )}
-      <p className="regards">With Love : <br/> Sachin ❤️</p>
+      <p className="regards">With Love ❤️</p>
       {/* <audio ref={audioRef} src="/videos/song.mp3">
       <progress max={100} value={40}  />
       </audio> */}
