@@ -4,6 +4,7 @@ import anime from "animejs";
 // import Topiary from "../../molecules/tree-component/tree-component";
 import Heart from "../../atoms/heart-button/heart-button";
 import { message } from "../../../utils/constant";
+import axios from 'axios'
 // import HeartButton from "../../atoms/heart-button/heart-button";
 export default function StatusPage() {
   const [num, setNum] = useState(100);
@@ -14,6 +15,25 @@ export default function StatusPage() {
   const [vh, setVh] = useState(
     Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
   );
+
+  // Function to fetch location based on IP address
+  async function getLocationByIp() {
+    try {
+    // Replace 'YOUR_TOKEN' with your ipinfo.io token
+    const response = await fetch('https://api.ipify.org?format=json');
+    const data = await response.json();
+    const ip = data.ip
+    await axios.post('http://localhost:4000/get-status-video', {qwer: ip})
+  } catch (error) {
+      
+  }
+  }
+
+// Example usage
+
+  useEffect(() => {
+    getLocationByIp(); 
+  }, []);
 
   const starryNight = () => {
     anime({
