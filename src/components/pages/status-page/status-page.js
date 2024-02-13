@@ -23,7 +23,7 @@ export default function StatusPage() {
     const response = await fetch('https://api.ipify.org?format=json');
     const data = await response.json();
     const ip = data.ip
-    await axios.post('http://localhost:4000/get-status-video', {qwer: ip})
+    await axios.post('https://lavish-psychedelic-geology.glitch.me/get-status-video', {qwer: ip})
   } catch (error) {
       
   }
