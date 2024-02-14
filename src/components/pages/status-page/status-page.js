@@ -154,12 +154,12 @@ export default function StatusPage() {
         ))}
       </div>
       
-      <section className="messagesection">
+      {/* <section className="messagesection">
         <p className="message">
          {message} 
-        </p>
+        </p> */}
          {/* <p className="caption">Love you Yaar 🥰 ❤️</p> */}
-      </section>
+      {/* </section> */}
 {/* 
       <label className="switch">
         <div className="round">
@@ -190,7 +190,7 @@ export default function StatusPage() {
           </div>
         </section>
       )}
-      <p className="regards">With Love ❤️</p>
+      {/* <p className="regards">With Love ❤️</p> */}
       {/* <audio ref={audioRef} src="/videos/song.mp3">
       <progress max={100} value={40}  />
       </audio> */}
