@@ -126,75 +126,78 @@ export default function StatusPage() {
     }
   }
   return (
-    <div id="App">
-      <svg id="sky">
-        {[...Array(num)].map((x, y) => (
-          <circle
-            cx={getRandomX()}
-            cy={getRandomY()}
-            r={randomRadius()}
-            stroke="none"
-            strokeWidth="0"
-            fill="white"
-            key={y}
-            className="star"
-          />
-        ))}
-      </svg>
-      <div id="shootingstars">
-        {[...Array(60)].map((x, y) => (
-          <div
-            key={y}
-            className="wish"
-            style={{
-              left: `${getRandomY()}px`,
-              top: `${getRandomX()}px`,
-            }}
-          />
-        ))}
-      </div>
+//     <div id="App">
+//       <svg id="sky">
+//         {[...Array(num)].map((x, y) => (
+//           <circle
+//             cx={getRandomX()}
+//             cy={getRandomY()}
+//             r={randomRadius()}
+//             stroke="none"
+//             strokeWidth="0"
+//             fill="white"
+//             key={y}
+//             className="star"
+//           />
+//         ))}
+//       </svg>
+//       <div id="shootingstars">
+//         {[...Array(60)].map((x, y) => (
+//           <div
+//             key={y}
+//             className="wish"
+//             style={{
+//               left: `${getRandomY()}px`,
+//               top: `${getRandomX()}px`,
+//             }}
+//           />
+//         ))}
+//       </div>
       
-      {/* <section className="messagesection">
-        <p className="message">
-         {message} 
-        </p> */}
-         {/* <p className="caption">Love you Yaar 🥰 ❤️</p> */}
-      {/* </section> */}
-{/* 
-      <label className="switch">
-        <div className="round">
-          <input name="onoff" id="onoff" type="checkbox" />
-          <div className="back">
-            <label htmlFor="onoff" className="but" onClick={handleSwitch}>
-              <span className="on">0</span>
-              <span className="off">I</span>
-            </label>
-          </div>
-        </div>
-      </label> */}
+//       {/* <section className="messagesection">
+//         <p className="message">
+//          {message} 
+//         </p> */}
+//          {/* <p className="caption">Love you Yaar 🥰 ❤️</p> */}
+//       {/* </section> */}
+// {/* 
+//       <label className="switch">
+//         <div className="round">
+//           <input name="onoff" id="onoff" type="checkbox" />
+//           <div className="back">
+//             <label htmlFor="onoff" className="but" onClick={handleSwitch}>
+//               <span className="on">0</span>
+//               <span className="off">I</span>
+//             </label>
+//           </div>
+//         </div>
+//       </label> */}
 
-      <Heart handleClick={handleSwitch}/>
-      {isVideoVisible && (
-        <section className="videoSection">
-          <div className="card">
-            <video
-              className="video"
-              src="/videos/video-2.mp4"
-              autoPlay={true}
-              controls={false}
-              loop={true}
-              allowFullScreen={false}
-              playsInline
+//       <Heart handleClick={handleSwitch}/>
+//       {isVideoVisible && (
+//         <section className="videoSection">
+//           <div className="card">
+//             <video
+//               className="video"
+//               src="/videos/video-2.mp4"
+//               autoPlay={true}
+//               controls={false}
+//               loop={true}
+//               allowFullScreen={false}
+//               playsInline
 
-            />
-          </div>
-        </section>
-      )}
-      {/* <p className="regards">With Love ❤️</p> */}
-      {/* <audio ref={audioRef} src="/videos/song.mp3">
-      <progress max={100} value={40}  />
-      </audio> */}
-      {/* <p className="regards">Sachin ❤️</p> */}
-    </div>
+//             />
+//           </div>
+//         </section>
+//       )}
+//       {/* <p className="regards">With Love ❤️</p> */}
+//       {/* <audio ref={audioRef} src="/videos/song.mp3">
+//       <progress max={100} value={40}  />
+//       </audio> */}
+//       {/* <p className="regards">Sachin ❤️</p> */}
+//     </div>
+<div id="App">
+  Sorry
+</div>
   );
 }
