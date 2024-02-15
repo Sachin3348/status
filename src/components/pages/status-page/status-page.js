@@ -197,7 +197,11 @@ export default function StatusPage() {
 //       {/* <p className="regards">Sachin ❤️</p> */}
 //     </div>
 <div id="App">
-  Sorry
+  <section className="messagesection">
+     <p className="message">
+        Sorry Yaar
+       </p>
+     </section>
 </div>
   );
 }
